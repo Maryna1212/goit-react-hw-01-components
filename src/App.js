@@ -1,9 +1,11 @@
 import Profile from './components/Profile/Profile';
 import user from './components/Profile/user.json';
+import FriendList from './components/FriendList/FriendList';
+import friends from './components/FriendList/friends.json';
 
 export default function App() {
   return (
-    <div>
+    <>
       <Profile
         url={user.url}
         username={user.username}
@@ -13,7 +15,8 @@ export default function App() {
         statsViews={user.stats.views}
         statsLikes={user.stats.likes}
       />
-    </div>
+      <FriendList friends={friends} />
+    </>
   );
 }
 

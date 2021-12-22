@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import defaultImage from './default.jpeg';
 
 export default function Profile(props) {
@@ -9,6 +10,7 @@ export default function Profile(props) {
                     src={url}
                     alt={username}
                     className="avatar"
+                    width="200"
                 />
                 <p className="name">{username}</p>
                 <p className="tag">{tag}</p>
@@ -32,3 +34,13 @@ export default function Profile(props) {
         </div>
     );
 }
+
+Profile.propTypes = {
+    url: PropTypes.string,
+    username: PropTypes.string.isRequired,
+    tag: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    statsFollowers: PropTypes.number.isRequired,
+    statsViews: PropTypes.number.isRequired,
+    statsLikes: PropTypes.number.isRequired,
+};
