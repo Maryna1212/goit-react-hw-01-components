@@ -7,7 +7,7 @@ export default function Profile(props) {
         <div className="profile">
             <div className="description">
                 <img
-                    src={url}
+                    src={url ?? defaultImage}
                     alt={username}
                     className="avatar"
                     width="200"
@@ -36,7 +36,7 @@ export default function Profile(props) {
 }
 
 Profile.propTypes = {
-    url: PropTypes.string,
+    url: PropTypes.string.isRequired,
     username: PropTypes.string.isRequired,
     tag: PropTypes.string.isRequired,
     location: PropTypes.string.isRequired,
