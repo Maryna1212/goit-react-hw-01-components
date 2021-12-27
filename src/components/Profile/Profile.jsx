@@ -1,42 +1,43 @@
 import PropTypes from 'prop-types';
 import defaultImage from './default.jpeg';
+import { Prof, Description, Avatar, Name, Tag, Stats, StatsItem, Label } from './Profile.styled';
 
 export default function Profile(props) {
     const { url = defaultImage, username, tag, location, statsFollowers, statsViews, statsLikes} = props;
     return (
-        <div className="profile">
-            <div className="description">
-                <img
+        <Prof>
+           <Description> 
+                <Avatar
                     src={url ?? defaultImage}
                     alt={username}
-                    className="avatar"
                     width="200"
                 />
-                <p className="name">{username}</p>
-                <p className="tag">{tag}</p>
-                <p className="location">{location}</p>
-            </div>
+                <Name>{username}</Name>
+                <Tag>{tag}</Tag>
+                <p>{location}</p>
+           </Description>
+       
 
-            <ul className="stats">
-                <li>
-                    <span className="label">Followers</span>
-                    <span className="quantity">{statsFollowers}</span>
-                </li>
-                <li>
-                    <span className="label">Views</span>
-                    <span className="quantity">{statsViews}</span>
-                </li>
-                <li>
-                    <span className="label">Likes</span>
-                    <span className="quantity">{statsLikes}</span>
-                </li>
-            </ul>
-        </div>
+            <Stats>
+                <StatsItem>
+                    <Label>Followers</Label>
+                    <span>{statsFollowers}</span>
+                </StatsItem>
+                <StatsItem>
+                    <Label>Views</Label>
+                    <span>{statsViews}</span>
+                </StatsItem>
+                <StatsItem>
+                    <Label>Likes</Label>
+                    <span>{statsLikes}</span>
+                </StatsItem>
+            </Stats>
+        </Prof>
     );
 }
 
 Profile.propTypes = {
-    url: PropTypes.string.isRequired,
+    url: PropTypes.string,
     username: PropTypes.string.isRequired,
     tag: PropTypes.string.isRequired,
     location: PropTypes.string.isRequired,

@@ -4,10 +4,13 @@ import Statistics from './components/Statistics/Statistics';
 import data from './components/Statistics/data.json';
 import FriendList from './components/FriendList/FriendList';
 import friends from './components/FriendList/friends.json';
+import TransactionHistory from './components/Transactions/TransactionHistory';
+import transactions from './components/Transactions/transactions.json';
+import { Container } from './App.styled';
 
 export default function App() {
   return (
-    <>
+    <Container>
       <Profile
         url={user.url}
         username={user.username}
@@ -21,7 +24,9 @@ export default function App() {
       <Statistics title="Upload stats" stats={data} />
 
       <FriendList friends={friends} />
-    </>
+
+      <TransactionHistory items={transactions} />
+    </Container>
   );
 }
 
