@@ -10,7 +10,7 @@ export default function Profile(props) {
                 <Avatar
                     src={url ?? defaultImage}
                     alt={username}
-                    width="200"
+                    width="300"
                 />
                 <Name>{username}</Name>
                 <Tag>{tag}</Tag>
