@@ -1,16 +1,16 @@
 import PropTypes from 'prop-types';
-import { TransactionContainer, TransactionsTable, Thead, Th, Td } from './Transactions.styled';
+import { TransactionContainer, TransactionsTable, Thead, Tr, Th, Td } from './Transactions.styled';
 
 function TransactionHistory({ items }) {
   return (
   <TransactionContainer>
         <TransactionsTable>
   <Thead>
-    <tr>
+    <Tr>
       <Th>Type</Th>
       <Th>Amount</Th>
       <Th>Currency</Th>
-    </tr>
+    </Tr>
   </Thead>
 
             <tbody>
@@ -28,12 +28,13 @@ function TransactionHistory({ items }) {
 };
 
 TransactionHistory.propTypes = {
-   items: PropTypes.arrayOf(PropTypes.object),
+  items: PropTypes.arrayOf(
+        PropTypes.shape({
         id: PropTypes.string.isRequired,
         type: PropTypes.string.isRequired,
-        amount: PropTypes.number.isRequired,
+        amount: PropTypes.string.isRequired,
         currency: PropTypes.string.isRequired,
-    
+    })),
 };
 
 export default TransactionHistory;

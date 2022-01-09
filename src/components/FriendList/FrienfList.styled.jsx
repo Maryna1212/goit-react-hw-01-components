@@ -1,5 +1,7 @@
 import styled from '@emotion/styled'
 
+
+
 export const FriendListContainer = styled.ul`
   list-style-type: none;
   background-color: rgb(233, 241, 163);
@@ -21,10 +23,17 @@ export const FriendItem = styled.li`
   box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
 ;`
 
-// export const FriendSpan = styled.span`
-//    background-color: rgb(205, 245, 181);
-// `;
+export const Status = styled.span`
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: block;
+  margin-right: 15px;
+  margin-left: 10px;
+  background-color: ${({ status }) => (status ? 'green' : 'red')};
+`;
 
 export const Avatar = styled.img`
   display: block;
 `;  
+

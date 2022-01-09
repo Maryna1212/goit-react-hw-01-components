@@ -18,9 +18,11 @@ export const Thead = styled.thead`
   background-color: #86c9f0;
   text-transform: uppercase;
   font-size: 20px;
+`;
 
-  tr:nth-child(even) {
-  background-color: #c9e1e7;
+export const Tr = styled.tr`
+  :nth-of-type(even) {
+    background-color: #c9e1e7;
   }
 `;
 

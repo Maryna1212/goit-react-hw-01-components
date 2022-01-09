@@ -7,10 +7,12 @@ import friends from './components/FriendList/friends.json';
 import TransactionHistory from './components/Transactions/TransactionHistory';
 import transactions from './components/Transactions/transactions.json';
 import { Container } from './App.styled';
+// import { GlobalStyle } from './components/GlobalStyle';
 
 export default function App() {
   return (
     <Container>
+      {/* <GlobalStyle /> */}
       <Profile
         url={user.url}
         username={user.username}

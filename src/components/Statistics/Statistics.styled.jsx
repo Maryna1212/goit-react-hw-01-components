@@ -29,6 +29,7 @@ export const Item = styled.li`
   align-items: center;
   flex-grow: 1;
   padding: 20px 0;
+   border: 1px solid rgb(139, 179, 212);
 `;
 
 export const Label = styled.span`
